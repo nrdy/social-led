@@ -15,7 +15,7 @@ void setup() {
 void loop() {
     static unsigned char ledState = LOW;
     static unsigned long ledCameOn = 0;
-// If the LED has been on for at least 5 seconds then turn it off.
+// If the LED has been on for at least 10 seconds then turn it off.
     if(ledState == HIGH) {
         if(millis()-ledCameOn > 10000) {
             digitalWrite(ledPin,LOW);
