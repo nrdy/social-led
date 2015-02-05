@@ -28,7 +28,6 @@ void setup() {
 }
 
 void loop() {
-<<<<<<< HEAD
     for (int i =0; i < 255; i +=15)     // 'flicker-in effect': define 1st voltage variable, perform loop until greater than or equal to 255, increment by 15 each run
     {
         for (int x =1; x <= amtPins; x++) {         // do this for each defined pin
@@ -51,24 +50,3 @@ void loop() {
     };
     delay(hld);                         // hold the lights where they are for set time
 }
-=======
-    static unsigned char ledState = LOW;
-    static unsigned long ledCameOn = 0;
-// If the LED has been on for at least 10 seconds then turn it off.
-    if(ledState == HIGH) {
-        if(millis()-ledCameOn > 10000) {
-            digitalWrite(ledPin,LOW);
-            ledState = LOW;
-        }
-    }
-// If the button's state has changed, then turn the LED on IF it is not on already.
-    if(funcState != lastFuncState) {
-        lastFuncState = funcState;
-        if((funcState == 1) && (ledState == LOW)) {
-            digitalWrite(ledPin, HIGH);
-            ledState = HIGH;
-            ledCameOn = millis();
-            }
-        }
-}
->>>>>>> origin/master
